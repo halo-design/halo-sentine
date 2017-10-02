@@ -17,6 +17,7 @@ module.exports = {
     jsHashType: 'chunkhash:8',
     cssHashType: 'contenthash:8',
     publicPath: '/halo/',
+    projectName: 'IFP内部管理系统',
     esShim: false,
     sourceMap: false,
     gzip: false,
@@ -37,6 +38,7 @@ module.exports = {
       subDir: ''
     },
     publicPath: '/',
+    projectName: 'IFP内部管理系统',
     esShim: false,
     checkVersions: true,
     proxyTable: {

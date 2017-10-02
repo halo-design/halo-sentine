@@ -39,6 +39,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     new OptimizeCSSPlugin(),
     new HtmlWebpackPlugin({
+      title: settings.projectName,
       remoteLog: false,
       isMobile: settings.isMobile,
       filename: assetsPath(assets.htmlFileName),

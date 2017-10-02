@@ -2,7 +2,7 @@ import React from 'react'
 import { observable, action } from 'mobx'
 import { observer, inject } from 'mobx-react'
 
-import Todo from '^/Todo'
+import Todo from './Todo'
 
 @inject(stores => {
   const {todos: { todos, unfinishedTodoCount }} = stores
