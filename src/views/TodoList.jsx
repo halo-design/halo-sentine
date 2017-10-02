@@ -4,11 +4,14 @@ import { observer, inject } from 'mobx-react'
 
 import Todo from '^/Todo'
 
-@inject(stores => ({
-  myTodos: stores.todos.todos,
-  unTodos: stores.todos.unfinishedTodoCount,
-  addTodo: title => stores.todos.addTodo(title)
-}))
+@inject(stores => {
+  const {todos: { todos, unfinishedTodoCount }} = stores
+  return {
+    myTodos: todos,
+    unTodos: unfinishedTodoCount,
+    addTodo: title => stores.todos.addTodo(title)
+  }
+})
 
 @observer
 class TodoList extends React.Component {
