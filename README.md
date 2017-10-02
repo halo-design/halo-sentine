@@ -1,9 +1,9 @@
-# halo-optimus
+# halo-sentine
 
-[![issues](https://img.shields.io/github/issues/halo-design/halo-optimus.svg)](https://github.com/halo-design/halo-optimus)
-[![forks](https://img.shields.io/github/forks/halo-design/halo-optimus.svg)](https://github.com/halo-design/halo-optimus)
-[![stars](https://img.shields.io/github/stars/halo-design/halo-optimus.svg)](https://github.com/halo-design/halo-optimus)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/halo-design/halo-optimus)
+[![issues](https://img.shields.io/github/issues/halo-design/halo-sentine.svg)](https://github.com/halo-design/halo-sentine)
+[![forks](https://img.shields.io/github/forks/halo-design/halo-sentine.svg)](https://github.com/halo-design/halo-sentine)
+[![stars](https://img.shields.io/github/stars/halo-design/halo-sentine.svg)](https://github.com/halo-design/halo-sentine)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/halo-design/halo-sentine)
 
 
 Scaffolding with the latest react components
