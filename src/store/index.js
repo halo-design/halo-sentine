@@ -1,7 +1,9 @@
 import TodoListStore from './TodoListStore'
+import LoginStore from './LoginStore'
 
 const stores = {
-  todos: TodoListStore
+  todos: TodoListStore,
+  login: LoginStore
 }
 
 export default stores
