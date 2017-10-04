@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
 import { observable, action } from 'mobx'
 import { observer, inject } from 'mobx-react'
 
@@ -13,7 +13,7 @@ import { observer, inject } from 'mobx-react'
 })
 
 @observer
-@withRouter
+// @withRouter
 export default class LoginView extends React.Component {
   @observable userName = 'admin'
   @observable pswd = '123456'
