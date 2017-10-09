@@ -29,25 +29,25 @@ export default class LoginView extends React.Component {
 
   @action
   handlePswdChange = e => {
-    this.pswd = e.target.value
+    this.pswd = e.target.value.trim()
   }
 
   @action
   handleNameChange = e => {
-    this.userName = e.target.value
+    this.userName = e.target.value.trim()
   }
 
   @action
   handleCodeChange = e => {
-    this.vcode = e.target.value
+    this.vcode = e.target.value.trim()
   }
 
   handleSubmit () {
-    if (this.userName.trim() === '') {
+    if (!this.userName) {
       alert('请输入用户名！')
-    } else if (this.pswd.trim() === '') {
+    } else if (!this.pswd) {
       alert('请输入登录密码！')
-    } else if (this.vcode.trim() === '') {
+    } else if (!this.vcode) {
       alert('请输入验证码！')
     } else {
       this.props.loginHandle(this.userName, this.pswd, this.vcode)
