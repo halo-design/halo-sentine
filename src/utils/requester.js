@@ -1,7 +1,7 @@
 import qs from 'qs'
 import axios from 'axios'
 import { getCookie, setCookie } from './cookie'
-import { serverRootPath } from '../constants/config'
+import { serverRootPath, routeRootPath, routeLoginPath } from '~/constants/config'
 
 const Axios = axios.create({
   baseURL: '/' + serverRootPath,
@@ -42,7 +42,12 @@ Axios.interceptors.request.use(config => {
 Axios.interceptors.response.use(res => {
   const { status, data } = res
   const { header, body } = data
+  const { errorCode } = body
   header.iCIFID ? setCookie('iCIFID', header.iCIFID) : setCookie('iCIFID', body.iCIFID)
+  if (errorCode !== '0') {
+    alert(`请求失败！[${errorCode}]`)
+    window.location.replace(routeRootPath + routeLoginPath)
+  }
   switch (status) {
     case 403:
       alert('错误403')
