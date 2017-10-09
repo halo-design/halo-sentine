@@ -2,6 +2,7 @@ import React from 'react'
 // import { withRouter } from 'react-router-dom'
 import { observable, action } from 'mobx'
 import { observer, inject } from 'mobx-react'
+import logo from '#/images/logo.png'
 
 @inject(stores => {
   const {login: { checkCodeSrc }} = stores
@@ -57,6 +58,7 @@ export default class LoginView extends React.Component {
   render () {
     return (
       <div className='page-login'>
+        <img alt='logo' src={logo} />
         <input
           placeholder='请输入用户名'
           name='userName'

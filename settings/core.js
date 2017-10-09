@@ -38,7 +38,7 @@ module.exports = {
       subDir: ''
     },
     publicPath: '/',
-    projectName: 'IFP内部管理系统',
+    projectName: '内部管理系统',
     esShim: false,
     checkVersions: true,
     proxyTable: {
