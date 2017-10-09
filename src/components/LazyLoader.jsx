@@ -1,12 +1,10 @@
 import React from 'react'
+import { observable, action } from 'mobx'
+import { observer } from 'mobx-react'
 
+@observer
 export default class LazyLoader extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      model: null
-    }
-  }
+  @observable model = null
 
   componentWillMount () {
     this.load(this.props)
@@ -18,18 +16,15 @@ export default class LazyLoader extends React.Component {
     }
   }
 
+  @action
   load (props) {
-    this.setState({
-      model: null
-    })
-    props.load(model => {
-      this.setState({
-        model: model.default ? model.default : model
-      })
+    this.model = null
+    props.load(comp => {
+      this.model = comp.default ? comp.default : comp
     })
   }
 
   render () {
-    return this.props.children(this.state.model)
+    return this.props.children(this.model)
   }
 }
