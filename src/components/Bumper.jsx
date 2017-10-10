@@ -8,4 +8,6 @@ const Bumper = ({ compnent }) => (
   </LazyLoader>
 )
 
+export const getBumper = comp => () => <Bumper compnent={comp} />
+
 export default Bumper

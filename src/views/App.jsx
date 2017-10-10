@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Bumper from '^/Bumper'
+import { getBumper } from '^/Bumper'
 import Login from './Login'
 import Mismatch from './Mismatch'
 import TodoList from 'bundle-loader?lazy&name=todolist!./TodoList'
@@ -14,7 +14,7 @@ const App = () => (
       />
       <Route
         path='/todolist'
-        component={() => <Bumper compnent={TodoList} />}
+        component={getBumper(TodoList)}
       />
       <Route component={Mismatch} />
     </Switch>
