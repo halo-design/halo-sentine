@@ -14,11 +14,15 @@ module.exports = {
       cssDir: 'css',
       jsDir: 'js'
     },
+    extJS: [
+      'shim/es5-shim.min.js',
+      'shim/es6-shim.min.js'
+    ],
+    extCSS: [],
     jsHashType: 'chunkhash:8',
     cssHashType: 'contenthash:8',
     publicPath: '/halo/',
-    projectName: 'IFP内部管理系统',
-    esShim: false,
+    projectName: '内部管理系统',
     sourceMap: false,
     gzip: false,
     gzipExtensions: ['js', 'css'],
@@ -37,9 +41,13 @@ module.exports = {
     assets: {
       subDir: ''
     },
+    extJS: [
+      'shim/es5-shim.min.js',
+      'shim/es6-shim.min.js'
+    ],
+    extCSS: [],
     publicPath: '/',
     projectName: '内部管理系统',
-    esShim: false,
     checkVersions: true,
     proxyTable: {
       '/inmanage': {

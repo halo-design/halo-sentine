@@ -2,20 +2,12 @@ const path = require('path')
 const webpack = require('webpack')
 const settings = require('../settings/core')
 const styleLoader = require('./style-loader')
-const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 const env = isProd ? 'build' : 'dev'
 const assetsPath = curPath => path.posix.join(settings[env].assets.subDir, curPath)
 const resolve = dir => path.join(__dirname, '..', dir)
 const publicPath = dir => settings[env].publicPath + dir
-const assetConfig = (filename, hash) => ({
-  filepath: require.resolve(filename),
-  outputPath: 'js',
-  publicPath: publicPath('js'),
-  includeSourcemap: false,
-  hash: hash || false
-})
 
 let loaderRules = [
   {
@@ -74,13 +66,6 @@ let plugins = [
   new webpack.optimize.ModuleConcatenationPlugin()
 ]
 
-if (settings[env].esShim) {
-  plugins.push(new AddAssetHtmlPlugin([
-    assetConfig('../shim/es5-shim.min.js'),
-    assetConfig('../shim/es6-shim.min.js')
-  ]))
-}
-
 module.exports = {
   entry: {
     app: './src/core/main.js'
@@ -96,7 +81,6 @@ module.exports = {
       resolve('node_modules')
     ],
     alias: {
-      // 自定义路径别名
       '~': resolve('src'),
       '@': resolve('src/views'),
       '#': resolve('src/assets'),

@@ -39,6 +39,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     new OptimizeCSSPlugin(),
     new HtmlWebpackPlugin({
+      extJS: settings.extJS || [],
+      extCSS: settings.extCSS || [],
       title: settings.projectName,
       remoteLog: false,
       isMobile: settings.isMobile,
