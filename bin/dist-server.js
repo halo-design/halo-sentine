@@ -18,8 +18,6 @@ const uri = `http://${ip.address()}:${port}${publicPath}`
 
 const staticFileMiddleware = express.static(distServerPath)
 
-app.use(publicPath, staticFileMiddleware)
-
 app.use('/mock', express.static('./mock'))
 
 app.use(history({
