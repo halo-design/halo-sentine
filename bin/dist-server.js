@@ -37,6 +37,7 @@ app.listen(port, error => {
       const fullPath = uri + route.path
       await tools.screenshot(fullPath, devices, route.name, route.delay)
     }
+    console.log(chalk.yellow('\nScreen capture have already done!\n'))
   }
   process.env.npm_config_shot && genShot()
 })
@@ -45,6 +46,9 @@ Object.keys(proxyTable).forEach(context => {
   const options = proxyTable[context]
   if (typeof options === 'string') {
     options = { target: options }
+  }
+  options.onProxyReq = (proxyReq, req, res) => {
+    console.log(`[${chalk.gray('proxy')}]: ${chalk.yellow(proxyReq.path)}`)
   }
   app.use(proxyMiddleware(options.filter || context, options))
 })
