@@ -58,7 +58,7 @@ export default class LoginView extends React.Component {
   render () {
     return (
       <div className='page-login'>
-        <img alt='logo' src={logo} />
+        <img alt='logo' src={logo} width='300' />
         <input
           placeholder='请输入用户名'
           name='userName'
